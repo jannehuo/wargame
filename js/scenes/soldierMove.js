@@ -6,8 +6,12 @@ export default (soldier, wasd) => {
     const left = wasd.left.isDown;
     const right = wasd.right.isDown;
     
-    if(up || down || left || right) {
+    if((up || down || left || right) && !soldier.shooting) {
         soldier.anims.play('move',true);
+    }
+
+    if((up || down || left || right) && soldier.shooting) {
+        soldier.anims.play('shoot',true);
     }
 
     if(up) {
@@ -30,7 +34,10 @@ export default (soldier, wasd) => {
         soldier.x -= movementSpeed;
     } else if(right) {
         soldier.x += movementSpeed;
+    } else if(soldier.shooting) {
+        soldier.anims.play('shoot', true);
     } else {
-        soldier.anims.stop(null,true);
+        //soldier.anims.stop(null,true);
+        soldier.anims.play('idle', true);
     }
 }
