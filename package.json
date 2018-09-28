@@ -1,0 +1,23 @@
+{
+  "name": "ttpfighter",
+  "version": "1.0.0",
+  "main": "js/main.js",
+  "repository": "https://github.com/jannehuo/ttpfighter.git",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn run webpack-dev-server"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.2",
+    "babel-preset-env": "^1.7.0",
+    "copy-webpack-plugin": "^4.5.2",
+    "webpack": "^4.18.0",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "phaser": "^3.12.0"
+  }
+}
